@@ -1,0 +1,44 @@
+{
+  "generator-jhipster": {
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "enableHibernateCache": true,
+    "enableSwaggerCodegen": true,
+    "enableTranslation": true,
+    "jhiPrefix": "jhi",
+    "languages": [
+      "en",
+      "pt-br"
+    ],
+    "messageBroker": "kafka",
+    "nativeLanguage": "es",
+    "packageName": "com.dragoons.core",
+    "packageFolder": "com/dragoons/core",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "serviceDiscoveryType": "consul",
+    "skipClient": true,
+    "testFrameworks": [
+      "protractor",
+      "cucumber",
+      "gatling"
+    ],
+    "websocket": false,
+    "baseName": "drgMsUser",
+    "applicationType": "microservice",
+    "buildTool": "gradle",
+    "authenticationType": "oauth2",
+    "cacheProvider": "hazelcast",
+    "clientPackageManager": "yarn",
+    "skipUserManagement": true,
+    "jhipsterVersion": "5.8.1",
+    "serverPort": "8081",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "entities": [
+    "Wallet",
+    "Customer"
+  ]
+}

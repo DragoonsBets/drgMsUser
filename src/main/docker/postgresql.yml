@@ -1,0 +1,11 @@
+version: '2'
+services:
+    drgmsuser-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/drgMsUser/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=drgMsUser
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
