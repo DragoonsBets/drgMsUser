@@ -3,4 +3,4 @@ ENV PORT 8080
 EXPOSE 8080
 COPY build/libs/*.war /opt/app.war
 WORKDIR /opt
-CMD ["java", "-jar", "app.war --spring.profiles.active=prod"]
+CMD ["java", "-jar", "app.war"]
