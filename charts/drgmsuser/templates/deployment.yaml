@@ -43,6 +43,36 @@ spec:
       - name: {{ .Chart.Name }}-app
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: prod
+        - name: SPRING_CLOUD_CONSUL_HOST
+          value: consul.development.svc.cluster.local
+        - name: SPRING_CLOUD_CONSUL_PORT
+          value: "8500"
+        - name: SPRING_CLOUD_CONSUL_DISCOVERY_PREFER_IP_ADDRESS
+          value: "false"
+        - name: SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME
+          value: drgmsuser
+        - name: SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME
+          value: drgmsuser
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://drgmsuser-postgresql.development.svc.cluster.local:5432/drgMsUser
+        - name: SPRING_DATASOURCE_USERNAME
+          value: drgmsuser
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: drgmsuser-postgresql
+              key: postgres-password
+        - name: SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS
+          value: jhipster-kafka.development.svc.cluster.local
+        - name: SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES
+          value: jhipster-zookeeper.development.svc.cluster.local
+        - name: SPRING_SLEUTH_PROPAGATION_KEYS
+          value: "x-request-id,x-ot-span-context"
+        - name: JAVA_OPTS
+          value: " -Xmx256m -Xms256m"
         ports:
         - name: {{ .Values.service.portName }}
           containerPort: {{ .Values.service.internalPort }}
