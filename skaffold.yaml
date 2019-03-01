@@ -1,24 +1,25 @@
-apiVersion: skaffold/v1beta2
+apiVersion: skaffold/v1alpha2
 kind: Config
 build:
-  artifacts:
-  - image: changeme
-    context: .
-    docker: {}
   tagPolicy:
     envTemplate:
-      template: '{{.DOCKER_REGISTRY}}/dragoonsbets/drgmsuser:{{.VERSION}}'
+      template: "{{.DOCKER_REGISTRY}}/dragoonsbets/drgmsuser:{{.VERSION}}"
+  artifacts:
+  - imageName: drgmsuser
+    workspace: .
+    docker: {}
   local: {}
 deploy:
-  kubectl: {}
+  kubectl:
+    manifests:
 profiles:
 - name: dev
   build:
-    artifacts:
-    - docker: {}
     tagPolicy:
       envTemplate:
-        template: '{{.DOCKER_REGISTRY}}/dragoonsbets/drgmsuser:{{.DIGEST_HEX}}'
+        template: "{{.DOCKER_REGISTRY}}/dragoonsbets/drgmsuser:{{.DIGEST_HEX}}"
+    artifacts:
+    - docker: {}
     local: {}
   deploy:
     helm:
@@ -26,5 +27,5 @@ profiles:
       - name: drgmsuser
         chartPath: charts/drgmsuser
         setValueTemplates:
-          image.repository: '{{.DOCKER_REGISTRY}}/dragoonsbets/drgmsuser'
-          image.tag: '{{.DIGEST_HEX}}'
+          image.repository: "{{.DOCKER_REGISTRY}}/dragoonsbets/drgmsuser"
+          image.tag: "{{.DIGEST_HEX}}"
