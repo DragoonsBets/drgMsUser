@@ -35,6 +35,9 @@ spec:
       containers:
       - name: drgmsuser-app
         image: registry.ns.bluemix.net/dragoonsbets/drgmsuser
+          repository: draft
+          tag: dev
+          pullPolicy: IfNotPresent
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: prod
