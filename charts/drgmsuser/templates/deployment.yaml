@@ -59,10 +59,7 @@ spec:
         - name: SPRING_DATASOURCE_USERNAME
           value: drgmsuser
         - name: SPRING_DATASOURCE_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: drgmsuser-postgresql
-              key: postgres-password
+          value: S2ibQ38exj
         - name: SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS
           value: jhipster-kafka.development.svc.cluster.local
         - name: SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES
