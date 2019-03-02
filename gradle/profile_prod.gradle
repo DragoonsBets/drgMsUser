@@ -14,21 +14,21 @@ if (project.hasProperty('swagger')) {
     profiles += ',swagger'
 }
 
-def SECURITY_OAUTH2_CLIENT_CLIENT_ID = 'internal'
-def SECURITY_OAUTH2_CLIENT_CLIENT_SECRET = 'internal'
-def SECURITY_OAUTH2_RESOURCE_USER_INFO_URI = 'keycloak.development.svc.cluster.local/auth/realms/jhipster/protocol/openid-connect/userinfo'
-def SPRING_CLOUD_CONSUL_HOST = 'consul.development.svc.cluster.local'
-def SPRING_CLOUD_CONSUL_PORT = 8500
-def SPRING_CLOUD_CONSUL_DISCOVERY_PREFER_IP_ADDRESS = 'false'
-def SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME = 'drgmsuser'
-def SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME = 'drgmsuser'
-def SPRING_DATASOURCE_URL = 'jdbc:postgresql://drgmsuser-postgresql.development.svc.cluster.local:5432/drgMsUser'
-def SPRING_DATASOURCE_USERNAME = 'drgmsuser'
-def SPRING_DATASOURCE_PASSWORD = 'S2ibQ38exj'
-def SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS = 'jhipster-kafka.development.svc.cluster.local'
-def SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES = 'jhipster-zookeeper.development.svc.cluster.local'
-def SPRING_SLEUTH_PROPAGATION_KEYS = 'x-request-id,x-ot-span-context'
-def JAVA_OPTS = ' -Xmx256m -Xms256m'
+def security_oauth2_client_client_id = 'internal'
+def security_oauth2_client_client_secret = 'internal'
+def security_oauth2_resource_user_info_uri = 'keycloak.development.svc.cluster.local/auth/realms/jhipster/protocol/openid-connect/userinfo'
+def spring_cloud_consul_host = 'consul.development.svc.cluster.local'
+def spring_cloud_consul_port = 8500
+def spring_cloud_consul_discovery_prefer_ip_address = 'false'
+def spring_cloud_consul_discovery_hostname = 'drgmsuser'
+def spring_cloud_consul_discovery_service_name = 'drgmsuser'
+def spring_datasource_url = 'jdbc:postgresql://drgmsuser-postgresql.development.svc.cluster.local:5432/drgmsuser'
+def spring_datasource_username = 'drgmsuser'
+def spring_datasource_password = 'S2ibQ38exj'
+def spring_cloud_stream_kafka_binder_brokers = 'jhipster-kafka.development.svc.cluster.local'
+def spring_cloud_stream_kafka_binder_zk_nodes = 'jhipster-zookeeper.development.svc.cluster.local'
+def spring_sleuth_propagation_keys = 'x-request-id,x-ot-span-context'
+def java_opts = ' -Xmx256m -Xms256m'
 
 springBoot {
     buildInfo()
@@ -48,27 +48,27 @@ processResources {
     filesMatching('**/bootstrap.yml') {
         filter {
             it.replace('#spring.profiles.active#', profiles)
-            it.replace('#SPRING_CLOUD_CONSUL_HOST#', SPRING_CLOUD_CONSUL_HOST)
-            it.replace('#SPRING_CLOUD_CONSUL_PORT#', SPRING_CLOUD_CONSUL_PORT)
+            it.replace('#spring_cloud_consul_host#', spring_cloud_consul_host)
+            it.replace('#spring_cloud_consul_port#', spring_cloud_consul_port)
         }
     }
     filesMatching('**/application-prod.yml') {
         filter {
-            it.replace('#SECURITY_OAUTH2_CLIENT_CLIENT_ID#', SECURITY_OAUTH2_CLIENT_CLIENT_ID)
-            it.replace('#SECURITY_OAUTH2_RESOURCE_USER_INFO_URI#', SECURITY_OAUTH2_RESOURCE_USER_INFO_URI)
-            it.replace('#SECURITY_OAUTH2_RESOURCE_USER_INFO_URI#', SECURITY_OAUTH2_RESOURCE_USER_INFO_URI)
-            it.replace('#SPRING_CLOUD_CONSUL_HOST#', SPRING_CLOUD_CONSUL_HOST)
-            it.replace('#SPRING_CLOUD_CONSUL_PORT#', SPRING_CLOUD_CONSUL_PORT)
-            it.replace('#SPRING_CLOUD_CONSUL_DISCOVERY_PREFER_IP_ADDRESS#', SPRING_CLOUD_CONSUL_DISCOVERY_PREFER_IP_ADDRESS)
-            it.replace('#SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME#', SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME)
-            it.replace('#SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME#', SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME)
-            it.replace('#SPRING_DATASOURCE_URL#', SPRING_DATASOURCE_URL)
-            it.replace('#SPRING_DATASOURCE_USERNAME#', SPRING_DATASOURCE_USERNAME)
-            it.replace('#SPRING_DATASOURCE_PASSWORD#', SPRING_DATASOURCE_PASSWORD)
-            it.replace('#SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS#', SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS)
-            it.replace('#SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES#', SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES)
-            it.replace('#SPRING_SLEUTH_PROPAGATION_KEYS#', SPRING_SLEUTH_PROPAGATION_KEYS)
-            it.replace('#JAVA_OPTS#', JAVA_OPTS)
+            it.replace('#security_oauth2_client_client_id#', security_oauth2_client_client_id)
+            it.replace('#security_oauth2_resource_user_info_uri#', security_oauth2_resource_user_info_uri)
+            it.replace('#security_oauth2_resource_user_info_uri#', security_oauth2_resource_user_info_uri)
+            it.replace('#spring_cloud_consul_host#', spring_cloud_consul_host)
+            it.replace('#spring_cloud_consul_port#', spring_cloud_consul_port)
+            it.replace('#spring_cloud_consul_discovery_prefer_ip_address#', spring_cloud_consul_discovery_prefer_ip_address)
+            it.replace('#spring_cloud_consul_discovery_hostname#', spring_cloud_consul_discovery_hostname)
+            it.replace('#spring_cloud_consul_discovery_service_name#', spring_cloud_consul_discovery_service_name)
+            it.replace('#spring_datasource_url#', spring_datasource_url)
+            it.replace('#spring_datasource_username#', spring_datasource_username)
+            it.replace('#spring_datasource_password#', spring_datasource_password)
+            it.replace('#spring_cloud_stream_kafka_binder_brokers#', spring_cloud_stream_kafka_binder_brokers)
+            it.replace('#spring_cloud_stream_kafka_binder_zk_nodes#', spring_cloud_stream_kafka_binder_zk_nodes)
+            it.replace('#spring_sleuth_propagation_keys#', spring_sleuth_propagation_keys)
+            it.replace('#java_opts#', java_opts)
         }
     }
 }
