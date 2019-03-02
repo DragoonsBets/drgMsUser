@@ -49,22 +49,22 @@ spring:
             bindings:
                 output:
                     destination: topic-jhipster
-    datasource:
-        type: com.zaxxer.hikari.HikariDataSource
-        url: ${spring_datasource_url}
-        username: ${spring_datasource_username}
-        password: ${spring_datasource_password}
-        hikari:
-            poolName: Hikari
-            auto-commit: false
     # datasource:
     #     type: com.zaxxer.hikari.HikariDataSource
-    #     url: jdbc:h2:file:./build/h2db/db/drgmsuser;DB_CLOSE_DELAY=-1
-    #     username: drgMsUser
-    #     password: ${SPRING_DATASOURCE_PASSWORD} 
+    #     url: ${spring_datasource_url}
+    #     username: ${spring_datasource_username}
+    #     password: ${spring_datasource_password}
     #     hikari:
     #         poolName: Hikari
     #         auto-commit: false
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:h2:file:./build/h2db/db/drgmsuser;DB_CLOSE_DELAY=-1
+        username: drgMsUser
+        password: ${SPRING_DATASOURCE_PASSWORD} 
+        hikari:
+            poolName: Hikari
+            auto-commit: false
     h2:
         console:
             enabled: false
