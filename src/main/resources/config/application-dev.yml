@@ -39,21 +39,21 @@ spring:
         consul:
             discovery:
                prefer-ip-address: true
-            host: ${SPRING_CLOUD_CONSUL_HOST}
-            port: 8500
+            host: ${spring_cloud_consul_host}
+            port: ${spring_cloud_consul_port}
         stream:
             kafka:
                 binder:
-                    brokers: ${SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS}
-                    zk-nodes: ${SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES}
+                    brokers: ${spring_cloud_stream_kafka_binder_brokers}
+                    zk-nodes: ${spring_cloud_stream_kafka_binder_zk_nodes}
             bindings:
                 output:
                     destination: topic-jhipster
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: ${SPRING_DATASOURCE_URL}
-        username: ${SPRING_DATASOURCE_USERNAME}
-        password: ${SPRING_DATASOURCE_PASSWORD}
+        url: ${spring_datasource_url}
+        username: ${spring_datasource_username}
+        password: ${spring_datasource_password}
         hikari:
             poolName: Hikari
             auto-commit: false
