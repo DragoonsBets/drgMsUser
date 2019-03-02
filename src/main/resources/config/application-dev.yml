@@ -49,22 +49,22 @@ spring:
             bindings:
                 output:
                     destination: topic-jhipster
-    # datasource:
-    #     type: com.zaxxer.hikari.HikariDataSource
-    #     url: ${spring_datasource_url}
-    #     username: ${spring_datasource_username}
-    #     password: ${spring_datasource_password}
-    #     hikari:
-    #         poolName: Hikari
-    #         auto-commit: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:file:./build/h2db/db/drgmsuser;DB_CLOSE_DELAY=-1
-        username: drgMsUser
-        password: 
+        url: ${spring_datasource_url}
+        username: ${spring_datasource_username}
+        password: ${spring_datasource_password}
         hikari:
             poolName: Hikari
             auto-commit: false
+    # datasource:
+    #     type: com.zaxxer.hikari.HikariDataSource
+    #     url: jdbc:h2:file:./build/h2db/db/drgmsuser;DB_CLOSE_DELAY=-1
+    #     username: drgMsUser
+    #     password: 
+    #     hikari:
+    #         poolName: Hikari
+    #         auto-commit: false
     h2:
         console:
             enabled: false
@@ -122,7 +122,7 @@ jhipster:
             management-center: # Full reference is available at: http://docs.hazelcast.org/docs/management-center/3.9/manual/html/Deploying_and_Starting.html
                 enabled: false
                 update-interval: 3
-                url: https://hazelcast.development:8180/mancenter
+                url: http://hazelcast.development:8180/mancenter
     # CORS is disabled by default on microservices, as you should access them through a gateway.
     # If you want to enable it, please uncomment the configuration below.
     # cors:
