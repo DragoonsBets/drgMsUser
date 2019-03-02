@@ -15,6 +15,22 @@ if (project.hasProperty('tls')) {
     profiles += ',tls'
 }
 
+def SECURITY_OAUTH2_CLIENT_CLIENT_ID = 'internal'
+def SECURITY_OAUTH2_CLIENT_CLIENT_SECRET = 'internal'
+def SECURITY_OAUTH2_RESOURCE_USER_INFO_URI = 'keycloak.development.svc.cluster.local/auth/realms/jhipster/protocol/openid-connect/userinfo'
+def SPRING_CLOUD_CONSUL_HOST = 'consul.development.svc.cluster.local'
+def SPRING_CLOUD_CONSUL_PORT = 8500
+def SPRING_CLOUD_CONSUL_DISCOVERY_PREFER_IP_ADDRESS = 'false'
+def SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME = 'drgmsuser'
+def SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME = 'drgmsuser'
+def SPRING_DATASOURCE_URL = 'jdbc:postgresql://drgmsuser-postgresql.development.svc.cluster.local:5432/drgMsUser'
+def SPRING_DATASOURCE_USERNAME = 'drgmsuser'
+def SPRING_DATASOURCE_PASSWORD = 'S2ibQ38exj'
+def SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS = 'jhipster-kafka.development.svc.cluster.local'
+def SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES = 'jhipster-zookeeper.development.svc.cluster.local'
+def SPRING_SLEUTH_PROPAGATION_KEYS = 'x-request-id,x-ot-span-context'
+def JAVA_OPTS = ' -Xmx256m -Xms256m'
+
 springBoot {
     buildInfo {
 		properties {
@@ -32,11 +48,47 @@ processResources {
     filesMatching('**/application.yml') {
         filter {
             it.replace('#project.version#', version)
+            it.replace('#SECURITY_OAUTH2_CLIENT_CLIENT_ID#', SECURITY_OAUTH2_CLIENT_CLIENT_ID)
+            it.replace('#SECURITY_OAUTH2_RESOURCE_USER_INFO_URI#', SECURITY_OAUTH2_RESOURCE_USER_INFO_URI)
+            it.replace('#SECURITY_OAUTH2_RESOURCE_USER_INFO_URI#', SECURITY_OAUTH2_RESOURCE_USER_INFO_URI)
+            it.replace('#SPRING_CLOUD_CONSUL_HOST#', SPRING_CLOUD_CONSUL_HOST)
+            it.replace('#SPRING_CLOUD_CONSUL_PORT#', SPRING_CLOUD_CONSUL_PORT)
+            it.replace('#SPRING_CLOUD_CONSUL_DISCOVERY_PREFER_IP_ADDRESS#', SPRING_CLOUD_CONSUL_DISCOVERY_PREFER_IP_ADDRESS)
+            it.replace('#SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME#', SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME)
+            it.replace('#SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME#', SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME)
+            it.replace('#SPRING_DATASOURCE_URL#', SPRING_DATASOURCE_URL)
+            it.replace('#SPRING_DATASOURCE_USERNAME#', SPRING_DATASOURCE_USERNAME)
+            it.replace('#SPRING_DATASOURCE_PASSWORD#', SPRING_DATASOURCE_PASSWORD)
+            it.replace('#SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS#', SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS)
+            it.replace('#SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES#', SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES)
+            it.replace('#SPRING_SLEUTH_PROPAGATION_KEYS#', SPRING_SLEUTH_PROPAGATION_KEYS)
+            it.replace('#JAVA_OPTS#', JAVA_OPTS)
         }
     }
     filesMatching('**/bootstrap.yml') {
         filter {
             it.replace('#spring.profiles.active#', profiles)
+            it.replace('#SPRING_CLOUD_CONSUL_HOST#', SPRING_CLOUD_CONSUL_HOST)
+            it.replace('#SPRING_CLOUD_CONSUL_PORT#', SPRING_CLOUD_CONSUL_PORT)
+        }
+    }
+    filesMatching('**/application-dev.yml') {
+        filter {
+            it.replace('#SECURITY_OAUTH2_CLIENT_CLIENT_ID#', SECURITY_OAUTH2_CLIENT_CLIENT_ID)
+            it.replace('#SECURITY_OAUTH2_RESOURCE_USER_INFO_URI#', SECURITY_OAUTH2_RESOURCE_USER_INFO_URI)
+            it.replace('#SECURITY_OAUTH2_RESOURCE_USER_INFO_URI#', SECURITY_OAUTH2_RESOURCE_USER_INFO_URI)
+            it.replace('#SPRING_CLOUD_CONSUL_HOST#', SPRING_CLOUD_CONSUL_HOST)
+            it.replace('#SPRING_CLOUD_CONSUL_PORT#', SPRING_CLOUD_CONSUL_PORT)
+            it.replace('#SPRING_CLOUD_CONSUL_DISCOVERY_PREFER_IP_ADDRESS#', SPRING_CLOUD_CONSUL_DISCOVERY_PREFER_IP_ADDRESS)
+            it.replace('#SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME#', SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME)
+            it.replace('#SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME#', SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME)
+            it.replace('#SPRING_DATASOURCE_URL#', SPRING_DATASOURCE_URL)
+            it.replace('#SPRING_DATASOURCE_USERNAME#', SPRING_DATASOURCE_USERNAME)
+            it.replace('#SPRING_DATASOURCE_PASSWORD#', SPRING_DATASOURCE_PASSWORD)
+            it.replace('#SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS#', SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS)
+            it.replace('#SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES#', SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES)
+            it.replace('#SPRING_SLEUTH_PROPAGATION_KEYS#', SPRING_SLEUTH_PROPAGATION_KEYS)
+            it.replace('#JAVA_OPTS#', JAVA_OPTS)
         }
     }
 }

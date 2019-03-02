@@ -6,6 +6,11 @@ services:
         #     - ~/volumes/jhipster/drgMsUser/postgresql/:/var/lib/postgresql/data/
         environment:
             - POSTGRES_USER=drgMsUser
-            - POSTGRES_PASSWORD=
+            #- POSTGRES_PASSWORD=
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                name: drgmsuser-postgresql
+                key: postgres-password
         ports:
             - 5432:5432

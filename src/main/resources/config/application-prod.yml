@@ -30,7 +30,7 @@ spring:
             discovery:
                prefer-ip-address: true
             host: ${SPRING_CLOUD_CONSUL_HOST}
-            port: 8500
+            port: ${SPRING_CLOUD_CONSUL_PORT}
         stream:
             kafka:
                 binder:
@@ -41,8 +41,8 @@ spring:
                     destination: topic-jhipster
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://drgmsuser-postgresql.development.svc.cluster.local:5432/drgMsUser
-        username: drgMsUser
+        url: ${SPRING_DATASOURCE_URL}
+        username: ${SPRING_DATASOURCE_USERNAME}
         password: ${SPRING_DATASOURCE_PASSWORD}
         hikari:
             poolName: Hikari
