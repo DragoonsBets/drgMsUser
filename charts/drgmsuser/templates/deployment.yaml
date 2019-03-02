@@ -49,7 +49,7 @@ spec:
         - name: SECURITY_OAUTH2_CLIENT_CLIENT_SECRET
           value: internal
         - name: SECURITY_OAUTH2_RESOURCE_USER_INFO_URI
-          value: keycloak.development.svc.cluster.local/auth/realms/jhipster/protocol/openid-connect/userinfo
+          value: csvc-keycloak-http.svc.cluster.local/auth/realms/jhipster/protocol/openid-connect/userinfo
         - name: SPRING_CLOUD_CONSUL_HOST
           value: consul.development.svc.cluster.local
         - name: SPRING_CLOUD_CONSUL_PORT
