@@ -29,19 +29,19 @@ spring:
         consul:
             discovery:
                prefer-ip-address: true
-            host: localhost
+            host: ${SPRING_CLOUD_CONSUL_HOST}
             port: 8500
         stream:
             kafka:
                 binder:
-                    brokers: localhost
-                    zk-nodes: localhost
+                    brokers: ${SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS}
+                    zk-nodes: ${SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES}
             bindings:
                 output:
                     destination: topic-jhipster
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/drgMsUser
+        url: jdbc:postgresql://drgmsuser-postgresql.development.svc.cluster.local:5432/drgMsUser
         username: drgMsUser
         password: ${SPRING_DATASOURCE_PASSWORD}
         hikari:
@@ -126,7 +126,7 @@ jhipster:
                 update-interval: 3
                 url:
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: drgMsUser@localhost
+        from: drg-ms-user@dragoons.io
         base-url: http://my-server-url-to-change # Modify according to your server's URL
     metrics:
         logs: # Reports metrics in the logs

@@ -39,24 +39,32 @@ spring:
         consul:
             discovery:
                prefer-ip-address: true
-            host: localhost
+            host: ${SPRING_CLOUD_CONSUL_HOST}
             port: 8500
         stream:
             kafka:
                 binder:
-                    brokers: localhost
-                    zk-nodes: localhost
+                    brokers: ${SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS}
+                    zk-nodes: ${SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES}
             bindings:
                 output:
                     destination: topic-jhipster
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:file:./build/h2db/db/drgmsuser;DB_CLOSE_DELAY=-1
+        url: ${SPRING_DATASOURCE_URL}
         username: drgMsUser
-        password: ${SPRING_DATASOURCE_PASSWORD} 
+        password: ${SPRING_DATASOURCE_PASSWORD}
         hikari:
             poolName: Hikari
             auto-commit: false
+    # datasource:
+    #     type: com.zaxxer.hikari.HikariDataSource
+    #     url: jdbc:h2:file:./build/h2db/db/drgmsuser;DB_CLOSE_DELAY=-1
+    #     username: drgMsUser
+    #     password: ${SPRING_DATASOURCE_PASSWORD} 
+    #     hikari:
+    #         poolName: Hikari
+    #         auto-commit: false
     h2:
         console:
             enabled: false
@@ -125,7 +133,7 @@ jhipster:
         # allow-credentials: true
         # max-age: 1800
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: drgMsUser@localhost
+        from: drg-ms-user@dragoons.io
         base-url: http://127.0.0.1:8081
     metrics:
         logs: # Reports metrics in the logs

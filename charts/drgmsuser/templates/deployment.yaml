@@ -43,7 +43,7 @@ spec:
       - name: {{ .Chart.Name }}-app
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: prod
+          value: dev
         - name: SPRING_CLOUD_CONSUL_HOST
           value: consul.development.svc.cluster.local
         - name: SPRING_CLOUD_CONSUL_PORT
@@ -59,7 +59,10 @@ spec:
         - name: SPRING_DATASOURCE_USERNAME
           value: drgmsuser
         - name: SPRING_DATASOURCE_PASSWORD
-          value: S2ibQ38exj
+          valueFrom:
+            secretKeyRef:
+              name: drgmsuser-postgresql
+              key: postgres-password
         - name: SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS
           value: jhipster-kafka.development.svc.cluster.local
         - name: SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES
