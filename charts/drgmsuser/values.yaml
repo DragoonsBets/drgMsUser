@@ -38,3 +38,4 @@ terminationGracePeriodSeconds: 10
 postgresql:
   enabled: true
   postgresUser: drgmsuser
+  pgHbaConfiguration: "host all drgmsuser all trust"
