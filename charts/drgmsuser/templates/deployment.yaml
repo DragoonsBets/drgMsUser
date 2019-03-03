@@ -43,7 +43,7 @@ spec:
       - name: {{ .Chart.Name }}-app
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: dev
+          value: prod
         - name: SECURITY_OAUTH2_CLIENT_CLIENT_ID
           value: internal
         - name: SECURITY_OAUTH2_CLIENT_CLIENT_SECRET
