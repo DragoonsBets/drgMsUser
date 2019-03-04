@@ -39,6 +39,6 @@ postgresql:
   enabled: true
   postgresqlUsername: drgmsuser
   postgresqlDatabase: drgMsUser
-  pgHbaConfiguration: "host all drgmsuser all trust"
+  pgHbaConfiguration: "host all all all trust"
   name: drgmsuser
   fullname: drgmsuser-postgres
