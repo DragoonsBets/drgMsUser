@@ -37,6 +37,6 @@ readinessProbe:
 terminationGracePeriodSeconds: 10
 postgresql:
   enabled: true
-  postgresUser: drgmsuser
-  postgresDatabase: drgMsUser
+  postgresqlUsername: drgmsuser
+  postgresqlDatabase: drgMsUser
   pgHbaConfiguration: "host all drgmsuser all trust"
