@@ -40,3 +40,5 @@ postgresql:
   postgresqlUsername: drgmsuser
   postgresqlDatabase: drgMsUser
   pgHbaConfiguration: "host all drgmsuser all trust"
+  name: drgmsuser
+  fullname: drgmsuser-postgres
