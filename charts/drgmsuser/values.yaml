@@ -35,10 +35,3 @@ readinessProbe:
   failureThreshold: 6
   initialDelaySeconds: 20
 terminationGracePeriodSeconds: 10
-postgresql:
-  enabled: true
-  postgresqlUsername: drgmsuser
-  postgresqlDatabase: drgMsUser
-  pgHbaConfiguration: "host all all all trust"
-  name: drgmsuser
-  fullname: drgmsuser-postgres

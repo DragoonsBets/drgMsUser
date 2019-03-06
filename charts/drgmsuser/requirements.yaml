@@ -1,5 +1,4 @@
 dependencies:
-  - name: postgresql
-    version: ^3.11.7
-    repository: https://kubernetes-charts.storage.googleapis.com
-    condition: postgresql.enabled
+  - name: drgdb
+  repository: http://jenkins-x-chartmuseum:8080
+  version: 0.0.3

@@ -61,13 +61,13 @@ spec:
         - name: SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME
           value: drgmsuser
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:postgresql://drgmsuser-postgresql-headless.development.svc.cluster.local:5432/drgMsUser
+          value: jdbc:postgresql://development-user-postgres-headless.development.svc.cluster.local:5432/drgMsUser
         - name: SPRING_DATASOURCE_USERNAME
           value: drgmsuser
         - name: SPRING_DATASOURCE_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: drgmsuser-postgresql
+              name: development-user-postgres
               key: postgresql-password
         - name: SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS
           value: jhipster-kafka.development.svc.cluster.local
