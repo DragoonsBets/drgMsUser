@@ -45,9 +45,9 @@ spec:
         - name: SPRING_PROFILES_ACTIVE
           value: prod
         - name: SECURITY_OAUTH2_CLIENT_CLIENT_ID
-          value: internal
+          value: drg-ms-user
         - name: SECURITY_OAUTH2_CLIENT_CLIENT_SECRET
-          value: internal
+          value: 14b83f20-431c-43cf-8768-587181b250ce
         - name: SECURITY_OAUTH2_RESOURCE_USER_INFO_URI
           value: csvc-keycloak-http.svc.cluster.local/auth/realms/jhipster/protocol/openid-connect/userinfo
         - name: SPRING_CLOUD_CONSUL_HOST
