@@ -1,0 +1,21 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: keycloak
+  namespace: jx-staging
+  selfLink: "/apis/extensions/v1beta1/namespaces/jx-staging/ingresses/keycloak"
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: 'true'
+spec:
+  tls:
+  - hosts:
+    - keycloak.jx-staging.viserion.dragoons.gg
+    secretName: tls-keycloak
+  rules:
+  - host: keycloak.jx-staging.viserion.dragoons.gg
+    http:
+      paths:
+      - backend:
+          serviceName: csvc-keycloak-http
+          servicePort: 8080
