@@ -57,9 +57,11 @@ spec:
         - name: SPRING_CLOUD_CONSUL_DISCOVERY_PREFER_IP_ADDRESS
           value: "false"
         - name: SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME
-          value: drgmsuser.jx-staging.svc.cluster.local
+          value: drgmsuser.jx-staging
         - name: SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_NAME
           value: drgmsuser
+        - name: SPRING_CLOUD_CONSUL_DISCOVERY_SERVICE_PORT
+          value: 80
         - name: SPRING_DATASOURCE_URL
           value: jdbc:postgresql://data-user-postgres.jx-staging.svc.cluster.local:5432/drgmsuser
         - name: SPRING_DATASOURCE_USERNAME
