@@ -45,11 +45,11 @@ spec:
         - name: SPRING_PROFILES_ACTIVE
           value: "prod"
         - name: SECURITY_OAUTH2_CLIENT_CLIENT_ID
-          value: "drg-ms-user"
+          value: "web_app"
         - name: SECURITY_OAUTH2_CLIENT_CLIENT_SECRET
-          value: "34dfdd75-af8e-4ed4-9787-b84f206c4a0d"
+          value: "web_app"
         - name: SECURITY_OAUTH2_RESOURCE_USER_INFO_URI
-          value: "keycloak.jx-staging.viserion.dragoons.gg/auth/realms/jhipster/protocol/openid-connect/userinfo"
+          value: "https://keycloak.jx-staging.viserion.dragoons.gg/auth/realms/jhipster/protocol/openid-connect/userinfo"
         - name: SPRING_CLOUD_CONSUL_HOST
           value: "consul.jx-staging.svc.cluster.local"
         - name: SPRING_CLOUD_CONSUL_PORT
