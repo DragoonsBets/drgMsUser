@@ -47,7 +47,7 @@ spec:
         - name: SECURITY_OAUTH2_CLIENT_CLIENT_ID
           value: drg-ms-user
         - name: SECURITY_OAUTH2_CLIENT_CLIENT_SECRET
-          value: 14b83f20-431c-43cf-8768-587181b250ce
+          value: 34dfdd75-af8e-4ed4-9787-b84f206c4a0d
         - name: SECURITY_OAUTH2_RESOURCE_USER_INFO_URI
           value: csvc-keycloak-http.svc.cluster.local/auth/realms/jhipster/protocol/openid-connect/userinfo
         - name: SPRING_CLOUD_CONSUL_HOST
